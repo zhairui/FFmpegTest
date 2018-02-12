@@ -19,6 +19,8 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/ffmpeg_player.c
              src/main/cpp/audio_player.c
+             src/main/cpp/posix_thread.c
+             src/main/cpp/thread_player.c
              )
 
 # Searches for a specified prebuilt library and stores the path as a

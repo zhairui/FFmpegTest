@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void encode(View view){
-        final String input = new File(Environment.getExternalStorageDirectory(),"love.mp4").getAbsolutePath();
+        final String input = new File(Environment.getExternalStorageDirectory(),"love.flv").getAbsolutePath();
         final String output = new File(Environment.getExternalStorageDirectory(),"output_1280x720_yuv420p.yuv").getAbsolutePath();
         new Thread(new Runnable() {
             @Override
@@ -37,19 +37,15 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
     public void mPlay(View btn){
-        String video = "love.mp4";
+        String video = "love.flv";
         final String input = new File(Environment.getExternalStorageDirectory(),video).getAbsolutePath();
         //Surface传入到Native函数中，用于绘制
         final Surface surface = videoView.getHolder().getSurface();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                player.render(input, surface);
-            }
-        }).start();
+        player.thread_play(input, surface);
 
       /*  String input = new File(Environment.getExternalStorageDirectory(),"input.flv").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"wuchuanfang.pcm").getAbsolutePath();
         player.sound(input, output);*/
+      //player.pthread();
     }
 }

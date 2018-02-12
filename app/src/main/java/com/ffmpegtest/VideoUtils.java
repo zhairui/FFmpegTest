@@ -15,6 +15,9 @@ public class VideoUtils {
     public native void render(String input,Surface surface);
     public native void sound(String input,String output);
 
+    public native void pthread();
+
+    public native void thread_play(String input,Surface surface);
     public AudioTrack createAudioTrack(int sampleRateInHz,int nb_channels){
         //固定格式的音频码流
         int audioFormat= AudioFormat.ENCODING_PCM_16BIT;
