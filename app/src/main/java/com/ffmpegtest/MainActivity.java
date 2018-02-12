@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         final String input = new File(Environment.getExternalStorageDirectory(),video).getAbsolutePath();
         //Surface传入到Native函数中，用于绘制
         final Surface surface = videoView.getHolder().getSurface();
-        player.thread_play(input, surface);
+        //player.thread_play(input, surface);
+
+        player.thread_audio_play(input);
 
       /*  String input = new File(Environment.getExternalStorageDirectory(),"input.flv").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"wuchuanfang.pcm").getAbsolutePath();

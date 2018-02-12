@@ -67,10 +67,8 @@ void init_input_format_ctx(struct Player *player, const char* input_cstr){
 //初始化解码器上下文
 void init_codec_context(struct Player *player, int stream_idx){
     //获取解码器
-    LOGI("init_codec_context begin");
     AVFormatContext *format_ctx=player->input_format_ctx;
     AVCodecContext *codec_ctx=format_ctx->streams[stream_idx]->codec;
-    LOGI("init_codec_context end");
     AVCodec *codec=avcodec_find_decoder(codec_ctx->codec_id);
     if(codec==NULL){
         LOGE("%s","无法解码");

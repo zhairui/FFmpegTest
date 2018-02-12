@@ -21,6 +21,7 @@ add_library( # Sets the name of the library.
              src/main/cpp/audio_player.c
              src/main/cpp/posix_thread.c
              src/main/cpp/thread_player.c
+             src/main/cpp/thread_audio_player.c
              )
 
 # Searches for a specified prebuilt library and stores the path as a
